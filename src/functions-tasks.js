@@ -18,7 +18,7 @@
  *
  */
 function getCurrentFunctionName() {
-  throw new Error('Not implemented');
+  return getCurrentFunctionName.name;
 }
 
 /**
@@ -32,10 +32,23 @@ function getCurrentFunctionName() {
  *   getFunctionBody(hiHello) => "function hiHello() { console.log('hello world'); }"
  *
  */
-function getFunctionBody(/* func */) {
-  throw new Error('Not implemented');
-}
+// function getFunctionBody(/* func */) {
+// throw new Error('Not implemented');
+// const funcStr = func.toString();
+// const body = funcStr.match(/(?<=\{)([\s\S]*?)(?=\})/)[0];
+// return `${body}`;
+// }
 
+function getFunctionBody(func) {
+  // const funcStr = func.toString();
+  // const body = funcStr.match(/(?<=\{)([\s\S]*?)(?=\})/)[0].trim();
+  // return `${body}`;
+  let str = '';
+  if (func !== undefined) {
+    str = func.toString();
+  }
+  return str;
+}
 /**
  * Returns the array where each element is the count of function arguments.
  *
